@@ -63,9 +63,9 @@
     opacity: 50%;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 800px){
     .elements{
-        max-width: 500px;
+        max-width: 650px;
         overflow: hidden;
     }
     .elements__cards{
