@@ -9,10 +9,11 @@
     justify-content: center;
     background: rgba(0, 0, 0, 0.5); 
     z-index: 999;
-    display: none;;
+    display: none;
 }
 
 .popup__container{
+    position: relative;
     max-width: 430px;
     height: 330px;
     display: flex;
@@ -25,16 +26,22 @@
 
 .popup__container_close-button{
     position: absolute;
-    top: 200px;
-    right: 375px;
+    top: -35px;
+    right: -35px;
     background-color: transparent;
     border: none;
     cursor: pointer;
+    z-index: 1000;
 }
 
 .popup__container_close-button_icon{
     max-width: 40px;
     height: 40px;
+    background-color: transparent;
+}
+
+.popup__container_close-button_icon:hover {
+    opacity: 80%;    
 }
 
 .popup__container_form{
@@ -74,7 +81,7 @@
     line-height: 100%;
     background-color: #fff;
     border: none;
-    padding: 8px, 0; 
+    padding: 8px 0; 
     
 }
 
@@ -110,4 +117,44 @@
 
 .popup__container_form_submit-button:hover{
     opacity: 80%;
+}
+
+@media screen and (max-width: 800px){
+    .popup__container_close-button{}
+    position: inherit;
+    top: -15px;
+    right: -15px;
+}
+
+@media screen and (max-width: 320px){
+    .popup__container{
+        max-width: 280px;
+        height: 322px;
+        margin: 0 auto;
+    }
+
+
+    .popup__container_close-button_icon{
+        max-width: 26px;
+        height: 26px;
+    }
+
+    .popup__container_form-title{
+        font-size: 24px;
+        margin-bottom: 76px;
+    }
+    .popup__container_form_input{
+        max-width: 238px;
+    }
+    .popup__container_form-divider{
+        max-width: 238px;
+    }
+
+    .popup__container_form-divider, #divisor1{
+        margin-bottom: 30px;
+    }
+
+    .popup__container_form_submit-button{
+        max-width: 238px;
+    }
 }

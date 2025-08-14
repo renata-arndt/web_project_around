@@ -4,14 +4,13 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 50px;
-    margin-right: 0;  
+    margin: 0 auto 50px;
 }
 
 .profile__avatar{
     max-width: 120px;
     height: 120px;
-    padding: 3.75px, 26.25px, 3.75px, 22.75px;
+    padding: 3.75px 26.25px 3.75px 22.75px;
 }
 
 .profile__info{
@@ -36,6 +35,7 @@
     font-size: 42px;
     line-height: 48px;
     margin: 0;
+    color: #fff
 }
 
 .profile__info_description{
@@ -45,6 +45,7 @@
     font-size: 18px;
     line-height: 100%;
     margin-left: 0;
+    color: #fff;
 }
 
 .profile__info_header_edit-button, button{
