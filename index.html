@@ -98,16 +98,15 @@
             <button class="popup__container popup__container_close-button">
               <img class="popup__container popup__container_close-button_icon" src="./images/Close_Icon.png" alt="Ícone de fechar">
             </button>
-              <fieldset id="form" class="popup__container popup__container_form">
-              <h2 class="popup__container popup__container_form-title">Editar perfil</h2>
-              <input type="text" id="name" name="name" class="popup__container popup__container_form-input popup__container_form-input_name">
-              <img id= "divisor1" class="popup__container popup__container_form-divider" src="./images/Line2.png" alt="Divisor">
-              <input type="text" id="description" name="description" class="popup__container popup__container_form-input popup__container_form-input_description">
-              <img class="popup__container popup__container_form-divider" src="./images/Line2.1.png" alt="Divisor">
-              <button type="submit" class="popup__container popup__container_form_submit-button">Salvar</button>
-            </fieldset>
-          </div>
-        </div>
-  <script src="./scripts/index.js"></script>  
+              <form id="form" class="popup__form">
+              <h2 class="popup__form popup__form-title">Editar perfil</h2>
+              <input type="text" id="name" name="name" class="popup__form popup__form-input" placeholder="Nome" required>>
+              <img id= "divisor1" class="popup__form popup__form-divider" src="./images/Line2.png" alt="Divisor">
+              <input type="text" id="description" name="description" class="popup__form popup__form-input" placeholder="Descrição" required>
+              <img class="popup__form popup__form-divider" src="./images/Line2.1.png" alt="Divisor">
+              <button type="submit" class="popup__form popup__form_submit-button">Salvar</button>
+              </form> 
+            </div>
+  <script src="./scripts/popup.js"></script>  
 </body>
 </html>

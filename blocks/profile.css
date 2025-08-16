@@ -26,6 +26,7 @@
     align-items: center;
     justify-content: flex-start;
     gap: 16px;
+    margin: 0;
 }
 
 .profile__info_header_name{
@@ -34,7 +35,8 @@
     font-weight: 500;
     font-size: 42px;
     line-height: 48px;
-    margin: 0;
+    margin-bottom: 16px;
+    margin-left: 0;
     color: #fff
 }
 
@@ -44,7 +46,7 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 100%;
-    margin-left: 0;
+    margin: 0;
     color: #fff;
 }
 
