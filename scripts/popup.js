@@ -7,11 +7,8 @@ let profileDescription = document.querySelector(".profile__info_description");
 let profileInputDescription = document.querySelector("#description");
 let editForm = document.querySelector("#form");
 
-
 function openPopup(){  
     editPopup.classList.add("popup_opened");
-
-//colocando o texto dos elementos de perfil nos inputs do popup
 
     profileInputName.value = profileName.textContent;
 
@@ -24,8 +21,6 @@ function closePopup(){
 
 function handleEditForm(event){
     event.preventDefault();
-
-    //Agora, quando editarmos o texto do input, ele será atualizado no elemento de perfil    
 
     profileName.textContent = profileInputName.value;
 

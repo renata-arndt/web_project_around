@@ -96,10 +96,10 @@
 
 .popup__form-divider{
     max-width: 358px;
-    opacity: 20%;
     border: 0 solid #000000;
+    opacity: 20%;
     padding: 0;
-}
+    }
 
 .popup__form-divider, #divisor1{
     margin-bottom: 29px;
@@ -142,6 +142,10 @@
         margin: 0 auto;
     }
 
+    .popup__container_close-button{
+        top: -15px;
+        right: -120px;
+    }
 
     .popup__container_close-button_icon{
         max-width: 26px;
