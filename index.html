@@ -92,10 +92,10 @@
         <p class="footer__copyright">© 2025 Around The U.S.</p>
       </footer>
 
-<!-------------POP UP-------------->
+<!-------------POP UP 1-------------->
         <div class="popup" id="edit-popup">
           <div class="popup__container">
-            <button class="popup__container popup__container_close-button">
+            <button class="popup__container popup__container_close-button" id="close-edit-popup">
               <img class="popup__container popup__container_close-button_icon" src="./images/Close_Icon.png" alt="Ícone de fechar">
             </button>
               <form id="form" class="popup__form">
@@ -108,6 +108,34 @@
               </form> 
             </div>
         </div>
+
+<!----------------POP UP 2------------------>
+        <div class="popup" id="add-element-popup">
+          <div class="popup__container">
+            <button class="popup__container popup__container_close-button" id="close-add-popup">
+              <img class="popup__container popup__container_close-button_icon" src="./images/Close_Icon.png" alt="Ícone de fechar">
+            </button>
+              <form id="add-form" class="popup__form">
+              <h2 class="popup__form popup__form-title">Novo local</h2>
+              <input type="text" id="title" name="name" class="popup__form popup__form-input" placeholder="Título" required>
+              <img id= "divisor2" class="popup__form popup__form-divider" src="./images/Line2.png" alt="Divisor">
+              <input type="text" id="image-link" name="description" class="popup__form popup__form-input" placeholder="Link de imagem" required>
+              <img class="popup__form popup__form-divider" src="./images/Line2.1.png" alt="Divisor">
+              <button type="submit" class="popup__form popup__form_submit-button">Criar</button>
+              </form> 
+            </div>
+        </div>
+<!---------template do elemento--------->
+
+          <template id="element-template">
+            <li class="elements__card">
+            <img class="elements__card elements__card_image" src="" alt="">
+            <div class="elements__card elements__card_info">
+              <p class="elements__card elements__card_info-text"></p>
+              <img class = "elements__card elements__card_info-icon" src="./images/heart.png" alt="Ícone de coração">
+            </div>
+            </li>
+          </template>
   <script src="./scripts/index.js"></script>  
 </body>
 </html>

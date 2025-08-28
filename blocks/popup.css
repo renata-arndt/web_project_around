@@ -94,6 +94,13 @@
     padding: 0;
 }
 
+.popup__form_input, #title, #image-link{
+    display: inline-block;
+    width: 100%;
+    align-content: flex-start;
+    padding: 0;
+}
+
 .popup__form-divider{
     max-width: 358px;
     border: 0 solid #000000;
@@ -102,6 +109,10 @@
     }
 
 .popup__form-divider, #divisor1{
+    margin-bottom: 29px;
+}
+
+.popup__form-divider, #divisor2{
     margin-bottom: 29px;
 }
 
