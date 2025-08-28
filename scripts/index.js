@@ -46,6 +46,8 @@ const elementInputLink = document.querySelector("#image-link");
 const elementTemplate = document.querySelector("#element-template");
 const elementCard = document.querySelector(".elements__card");
 
+const likeButton = document.querySelectorAll(".elements__card_info-icon");
+
 function openPopup(){  
     editPopup.classList.add("popup_opened");
 
@@ -140,3 +142,9 @@ addElementForm.addEventListener("submit", handleAddElementForm);
 
 editPopup.addEventListener("click", handleClosePopup);
 addElementPopup.addEventListener("click", handleClosePopup);
+
+document.querySelectorAll(".elements__card_info-icon").forEach((button) => {
+  button.addEventListener("click", () => {
+    const active = button.classList.toggle("active");
+  });
+});

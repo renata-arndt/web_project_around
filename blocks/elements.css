@@ -63,6 +63,10 @@
     opacity: 50%;
 }
 
+.elements__card_info-icon.active{
+    background-image: url(../images/Union.png);
+    }
+
 @media screen and (max-width: 800px){
     .elements{
         max-width: 650px;
