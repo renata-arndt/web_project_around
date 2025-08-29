@@ -48,6 +48,8 @@ const elementCard = document.querySelector(".elements__card");
 
 const likeButton = document.querySelectorAll(".elements__card_info-icon");
 
+const trashButtons = document.querySelectorAll(".elements__card_info-trash");
+
 function openPopup(){  
     editPopup.classList.add("popup_opened");
 
@@ -147,6 +149,13 @@ function addLikeButtonListener(button){
     const active = button.classList.toggle("active");
   });
 }
+
+trashButtons.forEach((button) =>{
+  console.log(button);
+  button.addEventListener("click", (e) => {
+    e.target.closest("li").remove();
+  });
+})
 
 editProfileButton.addEventListener("click", openPopup);
 elementAddButton.addEventListener("click", openAddElementPopup);
