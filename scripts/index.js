@@ -99,6 +99,7 @@ function createElement ({name, link}){
   const cloneElement = elementTemplate.content.cloneNode(true);
   const imgLink = cloneElement.querySelector(".elements__card-image");
   const title = cloneElement.querySelector(".elements__card_info-text");
+  
 
   if (imgLink){
     imgLink.src = link;
@@ -109,6 +110,7 @@ function createElement ({name, link}){
   if(title){
     title.textContent = name;
   }
+
   return cloneElement
 }
 
@@ -132,6 +134,18 @@ function handleAddElementForm(event){
   
   addElementForm.reset();
   closePopup(addElementPopup);
+
+    const newCardLikeButton = newCard.querySelector(".elements__card_info-icon");
+    newCardLikeButton.addEventListener("click", () => {
+    newCardLikeButton.classList.toggle("active");
+  });
+  
+}
+
+function addLikeButtonListener(button){
+  button.addEventListener("click", () => {
+    const active = button.classList.toggle("active");
+  });
 }
 
 editProfileButton.addEventListener("click", openPopup);
@@ -148,3 +162,5 @@ document.querySelectorAll(".elements__card_info-icon").forEach((button) => {
     const active = button.classList.toggle("active");
   });
 });
+
+renderInitialElements();
