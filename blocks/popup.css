@@ -46,6 +46,8 @@
 
 .popup__container_image{
     border-radius: 0;
+    height: 540px;
+    background-color: transparent;
 }
 
 .popup__container_caption{
@@ -56,8 +58,9 @@
     font-weight: 400;
     font-size: 12px;
     line-height: 100%;
-    color: #fff;
     background-color: transparent;
+    color: #fff;
+    
 }
 
 .popup__form{
@@ -190,11 +193,15 @@
         max-width: 238px;
     }
 
-    .popup__cform-divider, #divisor1{
+    .popup__form-divider, #divisor1{
         margin-bottom: 30px;
     }
 
     .popup__form_submit-button{
         max-width: 238px;
     }
+}
+
+.popup__container_image{
+    height: 299px;
 }
