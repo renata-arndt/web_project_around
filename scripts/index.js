@@ -50,6 +50,11 @@ const likeButton = document.querySelectorAll(".elements__card_info-icon");
 
 const trashButtons = document.querySelectorAll(".elements__card_info-trash");
 
+const imgPopup = document.querySelector("#image-popup");
+const imgPopupImage = imgPopup.querySelector(".popup__container_image");
+const imgPopupCaption = imgPopup.querySelector(".popup__container_caption");
+const imgPopupCloseButton = document.querySelector("#close-img-popup");
+
 function openPopup(){  
     editPopup.classList.add("popup_opened");
 
@@ -107,6 +112,8 @@ function renderInitialElements(element){
   image.src = element.link;
   image.alt = element.name;
 
+  image.addEventListener("click", () => openImgPopup(image));
+
   const trashButton = elementCard.querySelector(".elements__card_info-trash");
   trashButton.src = "./images/Trash.png";
   trashButton.alt = "Ícone de lixeira";
@@ -157,6 +164,17 @@ trashButtons.forEach((button) =>{
   });
 });
 
+function openImgPopup(imageElement){
+  imgPopup.classList.add("popup_opened");
+  imgPopupImage.src = imageElement.src;
+  imgPopupImage.alt = imageElement.alt;
+  imgPopupCaption.textContent = imageElement.alt;
+};
+
+function closeImgPopup(){
+  imgPopup.classList.remove("popup_opened");
+};
+
 editProfileButton.addEventListener("click", openPopup);
 elementAddButton.addEventListener("click", openAddElementPopup);
 
@@ -165,6 +183,8 @@ addElementForm.addEventListener("submit", handleAddElementForm);
 
 editPopup.addEventListener("click", handleClosePopup);
 addElementPopup.addEventListener("click", handleClosePopup);
+
+imgPopupCloseButton.addEventListener("click", closeImgPopup);
 
 document.querySelectorAll(".elements__card_info-icon").forEach((button) => {
   button.addEventListener("click", () => {

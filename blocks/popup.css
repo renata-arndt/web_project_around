@@ -44,6 +44,22 @@
     opacity: 80%;    
 }
 
+.popup__container_image{
+    border-radius: 0;
+}
+
+.popup__container_caption{
+    max-width: 291px;
+    height: 12px;
+    margin-top: 10px;
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+    color: #fff;
+    background-color: transparent;
+}
+
 .popup__form{
     background-color: #fff;
     border: 0;
