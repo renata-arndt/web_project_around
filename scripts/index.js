@@ -44,7 +44,7 @@ const elementInputTitle = document.querySelector("#title");
 const elementInputLink = document.querySelector("#image-link");
 
 const elementTemplate = document.querySelector("#element-template");
-const elementCard = document.querySelector(".elements__card");
+const elementsContainer = document.querySelector(".elements__cards");
 
 const likeButton = document.querySelectorAll(".elements__card_info-icon");
 
@@ -97,65 +97,65 @@ function handleClosePopup(event){
   }
 }
 
-function createElement ({name, link}){
-  const cloneElement = elementTemplate.content.cloneNode(true);
-  const imgLink = cloneElement.querySelector(".elements__card-image");
-  const title = cloneElement.querySelector(".elements__card_info-text");
-  
+function renderInitialElements(element){
+  const elementCard = elementTemplate.content.cloneNode(true);
 
-  if (imgLink){
-    imgLink.src = link;
-    imgLink.alt = name;
-  imgLink.setAttribute("loading", "lazy");
-  }
+  const title = elementCard.querySelector(".elements__card_info-text");
+  title.textContent = element.name;
 
-  if(title){
-    title.textContent = name;
-  }
+  const image = elementCard.querySelector(".elements__card_image");
+  image.src = element.link;
+  image.alt = element.name;
 
-  return cloneElement
+  const trashButton = elementCard.querySelector(".elements__card_info-trash");
+  trashButton.src = "./images/Trash.png";
+  trashButton.alt = "Ícone de lixeira";
+
+  const likeButton = elementCard.querySelector(".elements__card_info-icon");
+  likeButton.src = "./images/heart.png";
+
+  elementsContainer.prepend(elementCard);
 }
 
-function renderInitialElements(){
-  initialCards.forEach(createElement);
-}
+initialCards.forEach((item) => {
+  renderInitialElements(item);
+});
 
 function handleAddElementForm(event){
   event.preventDefault();
 
-  const elementTitle = elementInputTitle.value.trim();
-  const elementLink = elementInputLink.value.trim();
+  const newElement = {
+    name: elementInputTitle.value.trim(),
+    link: elementInputLink.value.trim(),
+  };
 
-  if(elementTitle === "" || elementLink === ""){
+  if(newElement.name === "" || newElement.link === ""){
     alert("Por favor, preencha todos os campos.");
     return;
-  }
+}
+  renderInitialElements(newElement);
 
-  const newCard = createElement({name: elementTitle, link: elementLink});
-  elementCard.prepend(newCard);
-  
   addElementForm.reset();
   closePopup(addElementPopup);
 
-    const newCardLikeButton = newCard.querySelector(".elements__card_info-icon");
-    newCardLikeButton.addEventListener("click", () => {
-    newCardLikeButton.classList.toggle("active");
-  });
-  
-}
+  const newCardLikeButton = newElement.querySelector(".elements__card_info-icon");
+     newCardLikeButton.addEventListener("click", () => {
+     newCardLikeButton.classList.toggle("active");
+   });
+};
 
 function addLikeButtonListener(button){
   button.addEventListener("click", () => {
     const active = button.classList.toggle("active");
   });
-}
+};
 
 trashButtons.forEach((button) =>{
   console.log(button);
   button.addEventListener("click", (e) => {
     e.target.closest("li").remove();
   });
-})
+});
 
 editProfileButton.addEventListener("click", openPopup);
 elementAddButton.addEventListener("click", openAddElementPopup);
@@ -171,5 +171,3 @@ document.querySelectorAll(".elements__card_info-icon").forEach((button) => {
     const active = button.classList.toggle("active");
   });
 });
-
-renderInitialElements();
