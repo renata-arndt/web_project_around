@@ -48,7 +48,6 @@ const elementsContainer = document.querySelector(".elements__cards");
 
 const likeButton = document.querySelectorAll(".elements__card_info-icon");
 
-const trashButtons = document.querySelectorAll(".elements__card_info-trash");
 
 const imgPopup = document.querySelector("#image-popup");
 const imgPopupImage = imgPopup.querySelector(".popup__container_image");
@@ -75,19 +74,19 @@ function closePopup(popup){
 function handleEditForm(event){
     event.preventDefault();
 
+    if(profileInputName.value.trim() === ""){
+        alert("Nome não pode estar vazio");
+        return;
+    }
+
+    if(profileInputDescription.value.trim() === ""){
+        alert("Descrição não pode estar vazia");
+        return; 
+    }
+
     profileName.textContent = profileInputName.value;
 
-  if(profileInputName.value.trim() ===  ""){
-    alert("Nome não pode estar vazio");
-    return;
-  }
-
     profileDescription.textContent = profileInputDescription.value;
-
-    if(profileDescription.value.trim() ===  ""){
-    alert("Descrição não pode estar vazia");
-    return;
-  }
 
     closePopup(editPopup);
 }
@@ -118,8 +117,16 @@ function renderInitialElements(element){
   trashButton.src = "./images/Trash.png";
   trashButton.alt = "Ícone de lixeira";
 
+  trashButton.addEventListener("click", (e) => {
+    e.target.closest("li").remove();
+  });
+
   const likeButton = elementCard.querySelector(".elements__card_info-icon");
   likeButton.src = "./images/heart.png";
+
+  likeButton.addEventListener("click", () => {
+    likeButton.classList.toggle("active");
+  });
 
   elementsContainer.prepend(elementCard);
 }
@@ -157,12 +164,6 @@ function addLikeButtonListener(button){
   });
 };
 
-trashButtons.forEach((button) =>{
-  console.log(button);
-  button.addEventListener("click", (e) => {
-    e.target.closest("li").remove();
-  });
-});
 
 function openImgPopup(imageElement){
   imgPopup.classList.add("popup_opened");
