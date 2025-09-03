@@ -126,6 +126,12 @@ function renderInitialElements(element){
 
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("active");
+
+    if (likeButton.classList.contains("active")) {
+        likeButton.src = "./images/Union.png"; 
+    } else {
+        likeButton.src = "./images/heart.png"; 
+    }
   });
 
   elementsContainer.prepend(elementCard);
@@ -158,12 +164,6 @@ function handleAddElementForm(event){
    });
 };
 
-function addLikeButtonListener(button){
-  button.addEventListener("click", () => {
-    const active = button.classList.toggle("active");
-  });
-};
-
 
 function openImgPopup(imageElement){
   imgPopup.classList.add("popup_opened");
@@ -187,8 +187,4 @@ addElementPopup.addEventListener("click", handleClosePopup);
 
 imgPopupCloseButton.addEventListener("click", closeImgPopup);
 
-document.querySelectorAll(".elements__card_info-icon").forEach((button) => {
-  button.addEventListener("click", () => {
-    const active = button.classList.toggle("active");
-  });
-});
+
